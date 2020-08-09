@@ -1,18 +1,27 @@
 # Supervisor
 ## Supervisord Nedir ? 
 Supervisord unix benzeri işletim sistemlerinde bir dizi işlemi kontrol etmesine izin veren bir istemci/sunucu sistemidir.
+
+### Basit
+
+    Süpervizör, öğrenmesi kolay, INI tarzı basit bir yapılandırma dosyasıyla yapılandırılır. Başarısız işlemleri yeniden başlatmak ve otomatik günlük rotasyonu gibi hayatınızı kolaylaştıran birçok işlem başına seçenek sunar.
+
+### Merkezileştirilmiş
+
+    Supervisor, süreçlerinizi başlatmak, durdurmak ve izlemek için size tek bir yer sağlar. Süreçler tek tek veya gruplar halinde kontrol edilebilir. Supervisor'ı yerel veya uzak bir komut satırı ve web arayüzü sağlayacak şekilde yapılandırabilirsiniz.
+    
 ## Kurulum 
 Öncelikle ben kurulumu Centos 7'de kuracam. Resmi dökümana göre kulurum ve konfigürasyonu yapıyorum.
-    
-### Kurulum 
+
 ```bash pip install supervisord```
+
 ## Konfigürasyon
-Kurulum işlemi bittikten sonra öncelikle ```echo_supervisord_conf``` komutunu çalıştırıyoruzbu komut supervisord konfig dosyası oluşturması için.
+Kurulum işlemi bittikten sonra öncelikle ```echo_supervisord_conf``` komutunu çalıştırıyoruz bu komut supervisord konfig dosyası oluşturması için.
 
 Sonra ```echo_supervisord_conf > /etc/supervisord.conf``` Eğer ```/etc``` dizinine koymayı tercih etmiyorsanız kendi dizininize koyabilirsiniz.
 
 ## Program Ekleme
-Supervisor program eklemek için ```/etc/supervisord.conf```  dosyasını açın ordan eklenir. Ben laravel için ekleme yaptım
+Supervisor program eklemek için ```/etc/supervisord.conf```  dosyasından eklemeniz gerekiyor. Ben laravel için bir program ekledim.
 ```bash
     [program:laravel-worker]
     process_name=%(program_name)s_%(process_num)02d
@@ -34,7 +43,7 @@ kaydedip çıkıyorum
     sudo superciordctl start laravel-worker:*
 ```
 bu şekilde çalışmaya başladı 
-```bash sudo supervisorctl status``` komutunu çalıştırdığınızda eğer hata yoksa
+```sudo supervisorctl status``` komutunu çalıştırdığınızda eğer hata yoksa
 ```bash
     [root@server ~] supervisorctl status laravel-worker:*
     laravel-worker:laravel-worker_00   RUNNING   pid 27814, uptime 0:21:31
