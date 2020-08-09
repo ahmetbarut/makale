@@ -17,5 +17,11 @@ Supervisor program eklemek için ```/etc/supervisord.conf```  dosyasını açıp
     [program:visord-test]
     command= echo "supervisord test" > /tmp/worker.log
 ```
-
 kaydedip çıkıyorum
+
+#### supervisord çalıştırma
+```bash 
+    sudo supervisordctl reread
+    sudo supervisordctl update
+    sudo superciordctl start visord-test
+```
