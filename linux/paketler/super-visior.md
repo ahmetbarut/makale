@@ -3,13 +3,11 @@
 Supervisord unix benzeri işletim sistemlerinde bir dizi işlemi kontrol etmesine izin veren bir istemci/sunucu sistemidir.
 
 ### Basit
-
-    Süpervizör, öğrenmesi kolay, INI tarzı basit bir yapılandırma dosyasıyla yapılandırılır. Başarısız işlemleri yeniden başlatmak ve otomatik günlük rotasyonu gibi hayatınızı kolaylaştıran birçok işlem başına seçenek sunar.
+Süpervizör, öğrenmesi kolay, INI tarzı basit bir yapılandırma dosyasıyla yapılandırılır. Başarısız işlemleri yeniden başlatmak ve otomatik günlük rotasyonu gibi hayatınızı kolaylaştıran birçok işlem başına seçenek sunar.
 
 ### Merkezileştirilmiş
+Supervisor, süreçlerinizi başlatmak, durdurmak ve izlemek için size tek bir yer sağlar. Süreçler tek tek veya gruplar halinde kontrol edilebilir. Supervisor'ı yerel veya uzak bir komut satırı ve web arayüzü sağlayacak şekilde yapılandırabilirsiniz.
 
-    Supervisor, süreçlerinizi başlatmak, durdurmak ve izlemek için size tek bir yer sağlar. Süreçler tek tek veya gruplar halinde kontrol edilebilir. Supervisor'ı yerel veya uzak bir komut satırı ve web arayüzü sağlayacak şekilde yapılandırabilirsiniz.
-    
 ## Kurulum 
 Öncelikle ben kurulumu Centos 7'de kuracam. Resmi dökümana göre kulurum ve konfigürasyonu yapıyorum.
 
